@@ -11,4 +11,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get "/ielts/home"
+  get "/ielts/exam-ielts"
+  get "/ielts/exam-writing"
+  get "/ielts/exam-writing-select"
+  get "/ielts/exam-reading"
+  get "/ielts/exam-reading-select"
+  get "/ielts/exam-listening"
+  get "/ielts/exam-listening-select"
+  get "/ielts/exam-speaking"
+  get "/ielts/exam-speaking-select"
+
+  get "/practice/home"
+  get "/practice/speaking"
+  get "/practice/writing"
 end

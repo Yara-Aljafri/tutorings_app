@@ -1,28 +1,63 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= content_for(:title) || "Internship Week1" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<%= render "layouts/base_layout" do %>
+<!-- Main -->
+<!-- 
+This is the main application shell that contains all the content
+-->
+<main class="relative flex flex-col w-full min-h-dvh bg-background">
+  <div class="relative flex flex-col items-center flex-1 break-words">
+    <!-- Top-Navbar -->
+    <!--
+      Responsive changes:
+        Desktop:
+          - md:px-4;
+          - max-w-[800px];
+    -->
+    <div class="z-200 sticky top-0 w-full max-w-[800px] flex flex-row md:px-4">
+      <div class="w-full flex flex-row h-14 px-6 items-center justify-between bg-[linear-gradient(to_right,rgba(127,_96,_234,_1),rgba(100,_127,_232,_1),rgba(52,_166,_221,_1),rgba(57,_172,_173,_1))] rounded-b-2xl shadow-main backdrop-blur-md">
+        <div class="flex flex-row gap-x-2">
+          <div class="size-8 flex items-center justify-center bg-white rounded-full">
+            <%= image_tag "back_arrow.png", alt: "Back Arrow", class: "object-contain object-center", width: "16", height: "16" %>
+          </div>
+          <div class="size-8 flex items-center justify-center bg-white rounded-full">
+            <%= image_tag "ask_bot.png", alt: "Ask Bot", class: "object-contain object-center", width: "20", height: "20" %>
+          </div>
+        </div>
+        <div class="flex flex-row-reverse items-center gap-x-2">
+          <div class="size-8 flex items-center justify-center bg-white rounded-full">
+            <%= image_tag "profile.png", alt: "Profile", class: "object-contain object-center rounded-full", width: "32", height: "32" %>
+          </div>
+          <span class="text-white">رياض للتحدث</span>
+        </div>
+      </div>
+    </div>
+    <!-- END Top-Navbar -->
+    <!-- Content-Section -->
+    <div class="flex flex-col w-full flex-1">
+      <%= yield %>
+    </div>
+    <!-- END Content-Section -->
+    <!-- Bottom-Navbar -->
+    <div class="z-100 sticky bottom-0 min-[480px]:bottom-2 flex flex-row items-center w-full max-w-[480px] min-[480px]:px-4">
+      <div class="w-full h-16 bg-white max-w-[480px] flex flex-row items-center justify-around rounded-t-xl min-[480px]:rounded-xl shadow-main">
+        <% [
+          {link: "#", icon: "community.png", icon_filled: "community-filled.png", label: "المجتمع", alt: "icon2", active: controller_name == "main" && action_name == "community"},
+          {link: "#", icon: "time.png", icon_filled: "time-filled.png", label: "التحليلات", alt: "icon1", active: controller_name == "main" && action_name == "test"},
+          {link: "#", icon: "book.png", icon_filled: "book.png", label: "", alt: "icon3", active: controller_name == "main" && action_name == "book"},
+          {link: "#", icon: "pipeline.png", icon_filled: "pipeline-filled.png", label: "الخطة", alt: "icon4", active: controller_name == "main" && action_name == "plan"},
+          {link: "#", icon: "puzzle.png", icon_filled: "puzzle-filled.png", label: "التدريبات", alt: "icon5", active: controller_name == "main" && action_name == "training"}
+        ].each do |item| %>
+          <%= link_to item[:link], data: {active: item[:active]}, class: "relative h-full flex flex-col items-center justify-center cursor-pointer" do %>
+            <%= image_tag item[:icon], alt: item[:alt], class: "[[data-active=true]_&]:hidden block object-contain object-center", width: "28", height: "28" %>
+            <%= image_tag item[:icon_filled], alt: item[:alt], class: "[[data-active=true]_&]:block hidden object-contain object-center", width: "28", height: "28" %>
+            <div class="[[data-active=true]_&]:block hidden absolute top-0 left-0 w-full h-1 bg-[#34a6dd] rounded-full"></div>
+            <span class="[[data-active=true]_&]:inline-block hidden text-xs text-[#34a6dd]"><%= item[:label] %></span>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <!-- END Bottom-Navbar -->
+  </div>
+</main>
+<!-- END Main -->
+<% end %>
 
-    <%= yield :head %>
-
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
-
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
-</html>
