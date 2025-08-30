@@ -1,1 +1,119 @@
-<p class="text-2xl">Practice Speaking Page</p>
+<div class="w-full flex justify-center  "><!-- Main wrapper: centers the content horizontally -->
+ <div class=" p-3 md:p-3"><!-- Padding wrapper for responsive spacing -->
+
+   <div class="bg-white rounded-md flex items-center flex-col p-5 md:p-5 z-10 shadow-lg/30"><!-- Content card wrapper with shadow and rounded corners -->
+
+     <!-- Header section with icon and title -->
+     <div class="flex flex-row-reverse p-2 md:p-3 w-full justify-center">
+       <div class="relative right-2 flex w-15 h-15 md:w-15 md:h-15"><!-- Rotated/wrapped icon container -->
+         <%= image_tag "icon-01.svg", alt: "Back Arrow" %><!-- Icon image -->
+       </div>
+       <div class="flex py-3"><!-- Title container -->
+         <div dir="rtl" class="rounded-lg text-[#8e81f2] text-2xl md:text-2xl font-semibold">
+           تحدث مع رياض!<!-- Main header title in Arabic -->
+         </div>
+       </div>
+     </div>
+
+     <!-- Sub-header / description -->
+     <div>
+       <div class="text-2xl">ممارسة المحادثة مع الذكاء الصناعي</div><!-- Section description -->
+     </div>
+
+     <!-- Character profile image -->
+     <div class="flex justify-center items-center w-full">
+       <%= image_tag "Riyad.svg", alt: "Profile", class:"w-80 md:w-80 lg:w-64 h-auto rounded-full" %><!-- Circular profile image -->
+     </div>
+
+     <!-- Instructions and guides section -->
+     <div class="container w-full flex flex-col items-end text-lg md:text-x1">
+       <div>
+         <%# Instruction list using unordered list and RTL direction %>
+         <ul dir="rtl" class="list-disc flex flex-col px-4">
+           <li>
+             <div class="relative left-2">
+               <div dir="rtl">مارس المحادثات الحقيقية مع رياض، شريكك الذكي في التحدث!</div><!-- Instruction 1 -->
+             </div>
+           </li>
+           <li>
+             <div class="relative left-2">
+               <div dir="rtl" class="p-1">تحدث بحرية وحسن طلاقتك</div><!-- Instruction 2 -->
+             </div>
+           </li>
+           <li>
+             <div class="relative left-2">
+               <div dir="rtl" class="p-1">احصل على ملاحظات فورية حول النطق والقواعد</div><!-- Instruction 3 -->
+             </div>
+           </li>
+           <li>
+             <div class="flex flex-wrap relative left-1 items-center"><!-- Instruction 4 with inline icon -->
+               بعد الانتهاء اضغط على
+               <%= image_tag "icon-02.svg", alt: "Profile", class:"w-10 h-10 md:w-10 md:h-10 object-contain relative left-2" %>
+               <span class="relative left-3">للحصول على تقييم مفصل!</span>
+             </div>
+           </li>
+           <li>
+             <div class="relative left-2">
+               <div dir="rtl" class="p-1">مدة التحدث محدودة</div><!-- Instruction 5 -->
+             </div>
+           </li>
+           <li>
+             <div class="relative left-2">
+               <div dir="rtl" class="p-1">قم بالترقية للحصول على جلسات تدريب غير محدودة!</div><!-- Instruction 6 -->
+             </div>
+           </li>
+         </ul>
+       </div>
+     </div>
+
+     <!-- Button container with upgrade and start buttons -->
+     <div class="flex flex-row-reverse justify-between items-center w-full gap-4 mt-4">
+       <div class="flex flex-row-reverse justify-start gap-3 text-white w-full"><!-- Button group -->
+         <!-- Upgrade button -->
+         <div class="cursor-pointer flex flex-row-reverse justify-center items-center gap-2 bg-[#2f3c87] rounded-2xl py-2 px-4 sm:w-auto">
+           <div class="text-sm md:text-base"><div>ترقية</div></div>
+           <div class="w-4 h-4 md:w-5 md:h-5">
+             <%= image_tag "UpgradeArrow.svg", alt: "Back Arrow", class:"object-contain object-center" %>
+           </div>
+         </div>
+
+         <!-- Start button -->
+         <div class="cursor-pointer flex flex-row-reverse justify-center items-center gap-3 bg-[#2f3c87] rounded-2xl py-2 px-4 sm:w-auto">
+           <div class="text-sm md:text-base"><div>إبدأ</div></div>
+           <div>
+             <div class="w-4 h-4 md:w-5 md:h-6 flex justify-end">
+               <%= image_tag "LeftArrow.svg", alt: "Back Arrow", class:"object-contain object-center", width:"20", height:"20" %>
+             </div>
+           </div>
+         </div>
+       </div>
+
+       <!-- Progress indicator -->
+       <div class="flex flex-col items-center gap-1 sm:gap-2">
+         <div class="text-[#c0c0c0] text-base md:text-lg">1/5</div><!-- Progress fraction -->
+         <div class="flex flex-row gap-1 md:gap-2"><!-- Progress dots -->
+           <div class="w-4 h-4 md:w-5 md:h-5 rounded-full bg-[#8e81f2]"></div>
+           <div class="w-4 h-4 md:w-5 md:h-5 rounded-full bg-[#8e81f2]"></div>
+           <div class="w-4 h-4 md:w-5 md:h-5 rounded-full bg-[#8e81f2]"></div>
+           <div class="w-4 h-4 md:w-5 md:h-5 rounded-full bg-[#d9d9d9]"></div>
+           <div class="w-4 h-4 md:w-5 md:h-5 rounded-full bg-[#d9d9d9]"></div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <!-- Timer sticker -->
+   <div class="w-full flex px-4">
+     <div class="sticky flex flex-row justify-center z-0 w-32 md:w-30 bg-[#8e81f2] rounded-bl-md rounded-br-md shadow-lg md:shadow-x1 p-1 md:p-1 gap-1">
+       <div class="p-1 w-7 h-7 md:w-7 md:h-7">
+         <div>
+           <%= image_tag "Timer.svg", alt: "Back Arrow", class:"object-contain object-center", width: "20", height: "20" %><!-- Timer icon -->
+         </div>
+       </div>
+       <div class="text-white text-sm md:text-base"><div>43m</div><!-- Timer remaining minutes --></div>
+       <div class="text-white text-sm md:text-base"><div>16h</div><!-- Timer hours --></div>
+     </div>
+   </div>
+
+ </div>
+</div>

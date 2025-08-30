@@ -1,1 +1,199 @@
-<p class="text-2xl">IELTS Reading Exam Page</p>
+<!-- Main container for the Reading section -->
+<!-- mx-auto = center container horizontally, px-5 = horizontal padding 1.25rem, py-8 = vertical padding 2rem -->
+<!-- bg-[#e9ecf4] = light gray-blue background -->
+<div class=" container mx-auto px-5 py-8 bg-[#e9ecf4] ">
+
+  <!-- Card wrapper: flex column layout with spacing between items, bold text, and larger font size -->
+  <div class=" flex flex-col gap-5 font-bold text-xl ">
+  
+    <!-- Section title -->
+    <!-- p-2 = small padding, md:p-3 = slightly bigger padding on medium+ screens -->
+    <div class=" p-2 md:p-3">
+      <div>
+        <span class="text-[#659472]">Reading </span>Section Exams
+      </div>
+    </div>
+
+    <!-- Two button options for test types -->
+    <!-- flex = horizontal layout, gap-3/md:gap-4 = space between buttons, text-white = white text -->
+    <div class="flex gap-3 md:gap-4 text-white">
+
+      <!-- First button: Academic -->
+      <!-- outline-[#85c698] = green outline on focus/hover, hover:outline-2 = outline thickness, hover:bg-[#85c698] = background color on hover -->
+      <!-- cursor-pointer = clickable, rounded-2xl = large rounded corners, bg-[#659472] = green button, px-10 py-6 = padding -->
+      <!-- flex justify-center = center content horizontally -->
+      <div class="outline-[#85c698] hover:outline-2 hover:bg-[#85c698] cursor-pointer hover:outline-offset-2 container rounded-2xl bg-[#659472] px-10 py-6 flex justify-center">
+        <div>Academic</div>
+      </div>
+
+      <!-- Second button: General -->
+      <!-- Same styling as Academic button, with extra p-3 padding -->
+      <div class="container outline-[#85c698] hover:outline-2 hover:bg-[#85c698] cursor-pointer hover:outline-offset-2 rounded-2xl bg-[#659472] px-10 py-6 p-3 flex justify-center">
+        <div>General</div>
+      </div>
+
+    </div> <!-- End buttons -->
+
+    <!-- Card list of test selections -->
+    <!-- flex-col = stack vertically, gap-4/md:gap-4 = spacing between cards -->
+    <div class="flex flex-col gap-4 md:gap-4" >
+
+      <!-- ========== Selection 1 ========== -->
+      <div class="">
+        <!-- Top-right badge displaying score -->
+        <!-- flex justify-end = align badge to right, px-6 = horizontal padding -->
+        <div class="flex justify-end px-6">
+          <!-- w-20 = width 5rem, h-7 = height 1.75rem, bg-[#85c698] = green badge, text-white, rounded-tl-md rounded-tr-md = rounded top corners -->
+          <div class="shadow-lg/70 w-20 md:w-20 h-7 md:h-7 bg-[#85c698] text-white z-0 rounded-tl-md rounded-tr-md ">
+            <div class=" flex justify-center drop-shadow-lg  ">7.5/9</div> <!-- flex justify-center centers text horizontally, drop-shadow-lg = shadow -->
+          </div>
+        </div>
+
+        <div class="flex">
+          <!-- Side colored stickout -->
+          <!-- flex items-center = vertically center the stickout -->
+          <div class="flex items-center">
+            <!-- w-5 = 1.25rem width, h-7 = 1.75rem height, bg-[#85c698] = green, rounded-tl-md rounded-bl-md = rounded top-left and bottom-left corners -->
+            <div class=" w-5 md:w-5 h-7 md:h-7 bg-[#85c698] rounded-tl-md rounded-bl-md"></div>
+          </div>
+
+          <!-- Inner card container -->
+          <!-- z-20 = bring card above stickout, drop-shadow-sm = small shadow, flex flex-row = horizontal layout -->
+          <!-- bg-[#f3f3f3] = light gray background, justify-between = space between title and arrow -->
+          <!-- container px-5 py-4 = padding, rounded-md = rounded corners, cursor-pointer = clickable -->
+          <div class=" z-20 drop-shadow-sm flex flex-row bg-[#f3f3f3] justify-between container px-5 py-4 rounded-md cursor-pointer ">
+            
+            <!-- Test title -->
+            <div>
+              <div class="">Reading Mock Test 1</div>
+            </div>
+
+            <!-- Arrow image -->
+            <!-- object-contain = scale image to fit, object-center = center it -->
+            <div>
+              <%= image_tag "Reading-Arrow.svg", alt: "Back Arrow", class: "object-contain object-center", width: "30", height: "30" %>
+            </div>
+
+          </div> <!-- End inner card -->
+        </div> <!-- End flex for stickout + card -->
+      </div> <!-- End Selection 1 -->
+
+      <!-- ========== Selection 2 ========== -->
+      <div class="">
+        <!-- Top-right badge -->
+        <div class="flex justify-end px-6">
+          <div class="shadow-lg/70 w-20 md:w-20 h-7 md:h-7 bg-[#85c698] text-white rounded-tl-md rounded-tr-md ">
+            <div class=" flex justify-center">7.5/9</div>
+          </div>
+        </div>
+
+        <div class="flex">
+          <!-- Side stickout -->
+          <div class="flex items-center">
+            <div class=" w-5 md:w-5 h-7 md:h-7 bg-[#85c698] shadow-lg rounded-tl-md rounded-bl-md"></div>
+          </div>
+
+          <!-- Inner card -->
+          <div class=" drop-shadow-sm flex flex-row bg-[#f3f3f3] justify-between container px-5 py-4 rounded-md cursor-pointer ">
+            <div>Reading Mock Test 2</div>
+            <div>
+              <%= image_tag "Reading-Arrow.svg", alt: "Back Arrow", class: "object-contain object-center", width: "30", height: "30" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== Selection 3 ========== -->
+      <div class="">
+        <div class="flex justify-end px-6">
+          <div class="shadow-lg/70 w-20 md:w-20 h-7 md:h-7 bg-[#85c698] text-white rounded-tl-md rounded-tr-md ">
+            <div class=" flex justify-center">8.5/9</div>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="flex items-center">
+            <div class=" w-5 md:w-5 h-7 md:h-7 bg-[#85c698] shadow-lg rounded-tl-md rounded-bl-md"></div>
+          </div>
+
+          <div class=" drop-shadow-sm flex flex-row bg-[#f3f3f3] justify-between container px-5 py-4 rounded-md cursor-pointer ">
+            <div>Reading Mock Test 3</div>
+            <div>
+              <%= image_tag "Reading-Arrow.svg", alt: "Back Arrow", class: "object-contain object-center", width: "30", height: "30" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== Selection 4 ========== -->
+      <div class="">
+        <!-- Top-right gray badge = score 0 -->
+        <div class="flex justify-end px-6">
+          <div class="shadow-lg/70 w-20 md:w-20 h-7 md:h-7 bg-[#999999] text-white rounded-tl-md rounded-tr-md ">
+            <div class=" flex justify-center">0.0/9</div>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="flex items-center">
+            <div class=" w-5 md:w-5 h-7 md:h-7 bg-[#85c698] shadow-lg rounded-tl-md rounded-bl-md"></div>
+          </div>
+
+          <div class=" drop-shadow-sm flex flex-row bg-[#f3f3f3] justify-between container px-5 py-4 rounded-md cursor-pointer ">
+            <div>Reading Mock Test 4</div>
+            <div>
+              <%= image_tag "Reading-Arrow.svg", alt: "Back Arrow", class: "object-contain object-center", width: "30", height: "30" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== Selection 5 ========== -->
+      <div class="">
+        <div class="flex justify-end px-6">
+          <div class="shadow-lg/70 w-20 md:w-20 h-7 md:h-7 bg-[#999999] text-white rounded-tl-md rounded-tr-md ">
+            <div class=" flex justify-center">0.0/9</div>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="flex items-center">
+            <div class=" w-5 md:w-5 h-7 md:h-7 bg-[#85c698] shadow-lg rounded-tl-md rounded-bl-md"></div>
+          </div>
+
+          <div class=" drop-shadow-sm flex flex-row bg-[#f3f3f3] justify-between container px-5 py-4 rounded-md cursor-pointer ">
+            <div>Reading Mock Test 5</div>
+            <div>
+              <%= image_tag "Reading-Arrow.svg", alt: "Back Arrow", class: "object-contain object-center", width: "30", height: "30" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== Selection 6 ========== -->
+      <div class="">
+        <div class="flex justify-end px-6">
+          <div class="shadow-lg/70 w-20 md:w-20 h-7 md:h-7 bg-[#999999] text-white rounded-tl-md rounded-tr-md ">
+            <div class=" flex justify-center">0.0/9</div>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="flex items-center">
+            <div class=" w-5 md:w-5 h-7 md:h-7 bg-[#85c698] shadow-2xl rounded-tl-md rounded-bl-md"></div>
+          </div>
+
+          <div class=" drop-shadow-sm flex flex-row bg-[#f3f3f3] justify-between container px-5 py-4 rounded-md cursor-pointer ">
+            <div>Reading Mock Test 6</div>
+            <div>
+              <%= image_tag "Reading-Arrow.svg", alt: "Back Arrow", class: "object-contain object-center", width: "30", height: "30" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- End test selection list -->
+
+  </div> <!-- End card wrapper -->
+
+</div> <!-- End main container -->
