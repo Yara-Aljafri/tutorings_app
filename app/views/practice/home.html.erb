@@ -1,1 +1,162 @@
-<p class="text-2xl">Practice Home Page</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+
+  <div class="max-w-md mx-auto p-4">
+
+    <!-- Banner -->
+<div class="relative overflow-hidden rounded-2xl mb-5
+            shadow-[0_10px_24px_rgba(0,0,0,0.08)] border border-white/20
+            bg-gradient-to-l from-[#8e81f2] to-[#55c3d9]">
+  <div class="flex items-center gap-3 px-4 py-4">
+    <div class="shrink-0 w-14 h-14 rounded-xl bg-white/95 grid place-items-center ring-1 ring-black/5 text-[#2b2e38]">
+      <i class="fa-solid fa-user text-xl"></i>
+    </div>
+    <!-- نص من اليمين -->
+    <div class="flex-1 text-white text-right" dir="rtl">
+      <div class="text-[20px] font-extrabold mb-1">مرحباً رياض !</div>
+      <div class="text-[14px] leading-7">
+        هنا مساحتك لتطوير مهاراتك باستخدام أدوات الممارسة المدعومة بالذكاء الاصطناعي.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Card 1: Riyad for Speaking ===== -->
+<section class="relative mb-14">
+  <div class="relative z-10 bg-white rounded-2xl border border-[#E9ECF3] shadow-[0_10px_26px_rgba(20,24,40,.10)] px-4 pt-4 pb-4">
+
+    <div class="-mx-4 -mt-1  md:-mx-5">
+      <div class="bg-[#8E81F2] text-white rounded-xl px-5 py-2 flex items-center justify-center gap-2">
+        <i class="fa-solid fa-comment-dots text-white/95 text-lg"></i>
+        <div class="font-extrabold text-[18px]">Riyad for Speaking!</div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="mt-4">
+      <div class="flex items-start gap-3">
+        <!-- Text (على اليسار) -->
+        <p class="flex-1 leading-8 text-[15px] text-right">
+          مارس <span class="font-semibold">محادثة ثنائية</span> مع
+          <span class="font-extrabold">Riyad</span>،
+          ادخل في محادثة مطوّرة 
+          <span class="font-semibold">بالذكاء الاصطناعي</span> لدينا
+          واحصل على 
+          <span class="font-semibold">تحليل مفصّل</span> لكلامك
+        </p>
+
+        <!-- Avatar (على اليمين) -->
+        <div class="shrink-0">
+          <div class="relative">
+            <div class="w-[60px] h-[60px] rounded-full bg-[#F4F3FF] ring-2 ring-[#8E81F2] grid place-items-center">
+              <%= image_tag "Riyad.svg", alt: "IELTS logo" %>
+            </div>
+            <div class="absolute -bottom-1 -left-1 w-[20px] h-[20px] rounded-full bg-[#8E81F2] text-white grid place-items-center text-[10px]">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom row: progress (يسار) + button (يمين) -->
+      <div class="mt-4 flex items-center justify-between">
+        <!-- Progress left + number above -->
+        <div class="flex flex-col items-start gap-1">
+          <span class="text-[#bfc2cc] text-[13px] leading-none">1/5</span>
+          <div class="flex items-center gap-2">
+            <span class="w-3.5 h-3.5 rounded-full bg-[#8E81F2]"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-[#d9d9d9]"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-[#d9d9d9]"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-[#d9d9d9]"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-[#d9d9d9]"></span>
+          </div>
+        </div>
+
+        <!-- Button on right -->
+        <button class="inline-flex items-center gap-2 bg-[#8E81F2] hover:brightness-105 text-white rounded-xl px-4 py-2">
+          <i class="fa-solid fa-arrow-left text-sm"></i>
+          <span class="text-[15px]">ابدأ التحدث</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Time sticker -->
+  <div class="absolute left-3 -bottom-7 z-0">
+    <div class="bg-[#8E81F2] text-white rounded-b-xl rounded-t-md px-3 py-1.5 shadow-[0_8px_18px_rgba(0,0,0,.18)] flex items-center gap-2">
+      <i class="fa-regular fa-clock text-xs"></i>
+      <span class="text-[12.5px]">43m</span>
+      <span class="text-[12.5px]">16h</span>
+    </div>
+  </div>
+</section>
+<!-- ===== Card 2: Loay for Writing ===== -->
+<section class="relative mb-14">
+  <div class="relative z-10 bg-white rounded-2xl border border-[#E9ECF3] shadow-[0_10px_26px_rgba(20,24,40,.10)] px-4 pt-4 pb-4">
+
+    <!-- Title bar (extends a bit on the end side) -->
+    <div class="-mx-4 -mt-1  md:-mx-5">
+      <div class="bg-[#40BEEA] text-white rounded-xl px-5 py-2 flex items-center justify-center gap-2">
+        <i class="fa-solid fa-pen text-white/95 text-lg"></i>
+        <div class="font-extrabold text-[18px]">Loay for Writing!</div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="mt-4">
+      <div class="flex items-start gap-3">
+        <!-- Text (على اليسار) -->
+        <p class="flex-1 leading-8 text-[15px] text-right">
+          تدرّب على الكتابة مع <span class="font-extrabold">Loay</span>
+         اكتب مقالات، رسائل، أو تقارير.
+          احصل على تقييم فوري للبِنية، القواعد، المفردات، والأسلوب
+        </p>
+
+        <!-- Avatar (على اليمين) -->
+        <div class="shrink-0">
+          <div class="relative">
+            <div class="w-[60px] h-[60px] rounded-full bg-[#E6FBFF] ring-2 ring-[#40BEEA] grid place-items-center">
+                <%= image_tag "Loay.svg", alt: "IELTS logo"%>
+            </div>
+            <div class="absolute -bottom-1 -left-1 w-[20px] h-[20px] rounded-full bg-[#40BEEA] text-white grid place-items-center text-[10px]">
+              <i class="fa-solid fa-pen"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom row: progress (يسار) + button (يمين) -->
+      <div class="mt-4 flex items-center justify-between">
+        <!-- Progress -->
+        <div class="flex flex-col items-start gap-1">
+          <span class="text-[#bfc2cc] text-[13px] leading-none">2/5</span>
+          <div class="flex items-center gap-2">
+            <span class="w-3.5 h-3.5 rounded-full bg-[#40BEEA]"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-[#40BEEA]"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-[#d9d9d9]"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-[#d9d9d9]"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-[#d9d9d9]"></span>
+          </div>
+        </div>
+
+        <!-- Button on right -->
+        <button class="inline-flex items-center gap-2 bg-[#40BEEA] hover:brightness-105 text-white rounded-xl px-4 py-2">
+          <i class="fa-solid fa-arrow-left text-sm"></i>
+          <span class="text-[15px]">ابدأ الكتابة</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Time sticker -->
+  <div class="absolute left-3 -bottom-7 z-0">
+    <div class="bg-[#40BEEA] text-white rounded-b-xl rounded-t-md px-3 py-1.5 shadow-[0_8px_18px_rgba(0,0,0,.18)] flex items-center gap-2">
+      <i class="fa-regular fa-clock text-xs"></i>
+      <span class="text-[12.5px]">43m</span>
+      <span class="text-[12.5px]">16h</span>
+    </div>
+  </div>
+</section>
+
+    
+  </div>

@@ -1,1 +1,220 @@
-<p class="text-2xl">IELTS Writing Exam Page</p>
+<!-- Main container for the section -->
+<div class=" container mx-auto px-5 py-8 bg-[#e9ecf4] ">
+
+  <!-- Card wrapper -->
+  <div class=" flex flex-col gap-5 font-bold text-xl ">
+  
+    <!-- Title of the section -->
+    <div class=" p-2 md:p-3">
+      <div class="">
+        <span class="text-[#4ea7dd]">Writing </span>Section Exams
+      </div>
+    </div>
+
+    <!-- Two button options (Academic / General) -->
+    <div class="flex gap-3 md:gap-4 text-white">
+      
+      <!-- First button: Academic -->
+      <div class="outline-[#4fa9df] hover:outline-2 hover:bg-[#4fa9df] cursor-pointer hover:outline-offset-2 container rounded-2xl bg-[#3c80a8] px-10 py-6 flex justify-center">
+        <div>Academic</div>
+      </div>
+
+      <!-- Second button: General -->
+      <div class="container outline-[#4fa9df] hover:outline-2 hover:bg-[#4fa9df] cursor-pointer hover:outline-offset-2 rounded-2xl bg-[#3c80a8] px-10 py-6 p-3 flex justify-center">
+        <div>General</div>
+      </div>
+    </div>
+
+    <!-- Card list of test selections -->
+    <div class="flex flex-col gap-4 md:gap-4">
+      
+      <!-- ========== Selection 1 ========== -->
+      <div class="">
+        
+        <!-- Top-right badge showing score -->
+        <div class="flex justify-end px-6">
+          <div class="shadow-lg/70 w-20 md:w-20 h-7 md:h-7 bg-[#4ea7dd] text-white z-0 rounded-tl-md rounded-tr-md">
+            <div class=" flex justify-center drop-shadow-lg">7.5/9</div>
+          </div>
+        </div>
+
+        <div class="flex">
+          <!-- Left-side colored stickout -->
+          <div class="flex items-center">
+            <div class=" w-5 md:w-5 h-7 md:h-7 bg-[#4ea7dd] rounded-tl-md rounded-bl-md"></div>
+          </div>
+
+          <!-- Inner card -->
+          <div class=" z-20 drop-shadow-sm flex flex-row bg-[#f3f3f3] justify-between container px-5 py-4 rounded-md cursor-pointer">
+            
+            <!-- Test title + task description -->
+            <div>
+              <div>Writing Mock Test 1</div>
+              <div class="text-[#b1b1b1] text-base font-normal">
+                Task 1: Pie Chart / Task 2: Problem & Solution
+              </div>
+            </div>
+
+            <!-- Arrow image -->
+            <div class=" flex">
+              <%= image_tag "Writing-Arrow.svg", alt: "Back Arrow", class: "object-contain object-center", width: "30", height: "30" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== Selection 2 ========== -->
+      <div class="">
+        <!-- Score badge -->
+        <div class="flex justify-end px-6">
+          <div class="shadow-lg/70 w-20 md:w-20 h-7 md:h-7 bg-[#4ea7dd] text-white rounded-tl-md rounded-tr-md">
+            <div class=" flex justify-center">7.5/9</div>
+          </div>
+        </div>
+
+        <div class="flex">
+          <!-- Left stickout -->
+          <div class="flex items-center">
+            <div class=" w-5 md:w-5 h-7 md:h-7 bg-[#4ea7dd] shadow-lg rounded-tl-md rounded-bl-md"></div>
+          </div>
+
+          <!-- Inner card -->
+          <div class=" drop-shadow-sm flex flex-row bg-[#f3f3f3] justify-between container px-5 py-4 rounded-md cursor-pointer">
+            <div>
+              <div>Writing Mock Test 2</div>
+              <div class="text-[#b1b1b1] text-base font-normal">
+                Task 1: Pie Chart / Task 2: Problem & Solution
+              </div>
+            </div>
+            <div class=" flex">
+              <%= image_tag "Writing-Arrow.svg", alt: "Back Arrow", class: "object-contain object-center", width: "30", height: "30" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== Selection 3 ========== -->
+      <div class="">
+        <!-- Score badge -->
+        <div class="flex justify-end px-6">
+          <div class="shadow-lg/70 w-20 md:w-20 h-7 md:h-7 bg-[#4ea7dd] text-white rounded-tl-md rounded-tr-md">
+            <div class=" flex justify-center">8.5/9</div>
+          </div>
+        </div>
+
+        <div class="flex">
+          <!-- Left stickout -->
+          <div class="flex items-center">
+            <div class=" w-5 md:w-5 h-7 md:h-7 bg-[#4ea7dd] shadow-lg rounded-tl-md rounded-bl-md"></div>
+          </div>
+
+          <!-- Inner card -->
+          <div class=" drop-shadow-sm flex flex-row bg-[#f3f3f3] justify-between container px-5 py-4 rounded-md cursor-pointer">
+            <div>
+              <div>Writing Mock Test 3</div>
+              <div class="text-[#b1b1b1] text-base font-normal">
+                Task 1: Pie Chart / Task 2: Problem & Solution
+              </div>
+            </div>
+            <div class=" flex">
+              <%= image_tag "Writing-Arrow.svg", alt: "Back Arrow", class: "object-contain object-center", width: "30", height: "30" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== Selection 4 ========== -->
+      <div class="">
+        <!-- Score badge (gray, no score yet) -->
+        <div class="flex justify-end px-6">
+          <div class="shadow-lg/70 w-20 md:w-20 h-7 md:h-7 bg-[#999999] text-white rounded-tl-md rounded-tr-md">
+            <div class=" flex justify-center">0.0/9</div>
+          </div>
+        </div>
+
+        <div class="flex">
+          <!-- Left stickout -->
+          <div class="flex items-center">
+            <div class=" w-5 md:w-5 h-7 md:h-7 bg-[#4ea7dd] shadow-lg rounded-tl-md rounded-bl-md"></div>
+          </div>
+
+          <!-- Inner card -->
+          <div class=" drop-shadow-sm flex flex-row bg-[#f3f3f3] justify-between container px-5 py-4 rounded-md cursor-pointer">
+            <div>
+              <div>Writing Mock Test 4</div>
+              <div class="text-[#b1b1b1] text-base font-normal">
+                Task 1: Pie Chart / Task 2: Problem & Solution
+              </div>
+            </div>
+            <div class=" flex">
+              <%= image_tag "Writing-Arrow.svg", alt: "Back Arrow", class: "object-contain object-center", width: "30", height: "30" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== Selection 5 ========== -->
+      <div class="">
+        <!-- Score badge -->
+        <div class="flex justify-end px-6">
+          <div class="shadow-lg/70 w-20 md:w-20 h-7 md:h-7 bg-[#999999] text-white rounded-tl-md rounded-tr-md">
+            <div class=" flex justify-center">0.0/9</div>
+          </div>
+        </div>
+
+        <div class="flex">
+          <!-- Left stickout -->
+          <div class="flex items-center">
+            <div class=" w-5 md:w-5 h-7 md:h-7 bg-[#4ea7dd] shadow-lg rounded-tl-md rounded-bl-md"></div>
+          </div>
+
+          <!-- Inner card -->
+          <div class=" drop-shadow-sm flex flex-row bg-[#f3f3f3] justify-between container px-5 py-4 rounded-md cursor-pointer">
+            <div>
+              <div>Writing Mock Test 5</div>
+              <div class="text-[#b1b1b1] text-base font-normal">
+                Task 1: Pie Chart / Task 2: Problem & Solution
+              </div>
+            </div>
+            <div class=" flex">
+              <%= image_tag "Writing-Arrow.svg", alt: "Back Arrow", class: "object-contain object-center", width: "30", height: "30" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== Selection 6 ========== -->
+      <div class="">
+        <!-- Score badge -->
+        <div class=" flex justify-end px-6">
+          <div class="shadow-lg/70 w-20 md:w-20 h-7 md:h-7 bg-[#999999] text-white rounded-tl-md rounded-tr-md">
+            <div class=" flex justify-center">0.0/9</div>
+          </div>
+        </div>
+
+        <div class="flex">
+          <!-- Left stickout -->
+          <div class="flex items-center">
+            <div class=" w-5 md:w-5 h-7 md:h-7 bg-[#4ea7dd] shadow-2xl rounded-tl-md rounded-bl-md"></div>
+          </div>
+
+          <!-- Inner card -->
+          <div class=" drop-shadow-sm flex flex-row bg-[#f3f3f3] justify-between container px-5 py-4 rounded-md cursor-pointer">
+            <div>
+              <div>Writing Mock Test 6</div>
+              <div class="text-[#b1b1b1] text-base font-normal">
+                Task 1: Pie Chart / Task 2: Problem & Solution
+              </div>
+            </div>
+            <div class=" flex">
+              <%= image_tag "Writing-Arrow.svg", alt: "Back Arrow", class: "object-contain object-center", width: "30", height: "30" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- End test list -->
+
+  </div> <!-- End card wrapper -->
+
+</div> <!-- End main container -->

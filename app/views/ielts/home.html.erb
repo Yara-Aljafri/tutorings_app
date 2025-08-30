@@ -1,1 +1,124 @@
-<p class="text-2xl">IELTS Home Page</p>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+
+    <body class="relative flex flex-col w-full min-h-dvh">
+        <div class="relative flex w-screen h-screen bg-[#e7ebf3] flex-col">
+
+        <!-- Page Header: Title and instruction message -->
+            <div class="flex flex-col m-4">
+                <div class="flex flex-row gap-3">
+                    <div><%= image_tag "IELTS-logo.png", alt: "IELTS logo", width: "100" %></div>
+                    <div class="flex font-bold text-3xl items-center">Mock Test 1</div>
+                </div>
+                <div class="flex flex-row">
+                    <div>
+                        <%= image_tag "speech-bubble.png", alt: "Left arrow", width: "700" %></div>
+                    <div><%= image_tag "Loay.svg", alt:"AI bot picture", width: "40"%></div>
+                </div>
+            </div>
+
+        <!-- Full Test Progress -->
+
+                <div class="flex flex-col items-center">
+                    <div class="flex rounded-md px-4 pb-1 text-white text-lg font-medium bg-[#999999] -mb-1.5">
+                        0.0/9
+                    </div>
+                    <div class="flex flex-wrap justify-center w-screen">
+                        <div class="flex flex-row items-center bg-[#f3f3f3] w-130 h-20 rounded-lg m-4 shadow-xl/20">
+                            <div class="m-4 pb-3"><%= image_tag "gallery.png", alt: "Left arrow", width: "30" %></div>
+                            <div class="flex flex-col gap-2 w-full mr-9">
+                                <div class="font-bold text-2xl">Take <span class="text-red-500">Full</span> Test</div>
+                                <div class="w-full bg-gray-300 rounded-full">
+                                    <div class="bg-gradient-to-r from-[#8e81f2] from-10% via-sky-500 via-30% to-[#79c698] to-90% text-xs font-medium text-white text-right p-1 leading-none rounded-full" style="width: 45%">%45</div>
+                                </div>                
+                            </div>
+                            <div class="mr-6"><%= image_tag "Listening-Arrow.svg", alt: "Left arrow", width: "40", class: "flex justify-between" %></div>
+                        </div>        
+                    </div>
+                </div>
+
+        <!-- Separate Skill Sections -->
+            <div class="flex flex-wrap flex-row justify-center content-end w-screen gap-4 my-4">
+            <!-- Listening Section-->
+                <div class="flex flex-col items-center">
+                    <div class="rounded-md px-4 pb-1 text-white text-lg font-medium bg-[#de1f26] -mb-1.5">
+                        5.0/9
+                    </div>
+                    <div class="flex flex-col bg-[#f3f3f3] w-30 h-45 justify-between rounded-md m-px shadow-xl/20">
+                        <div class="flex flex-col h-30 bg-[#647fe8] rounded-md items-center justify-center m-2 mx-2 mt-2 mb-1 gap-2">
+                            <div class=><%= image_tag "Headphones.svg", alt: "Speach bubble", width: "35"%></div>
+                            <div class=" text-white font-bold">Listening</div>
+                        </div>
+                        <div class="flex justify-center items-center h-15 pb-1">
+                            <%= link_to "/ielts/exam-listening", class: "hover:scale-110 transition-transform duration-150" do %>
+                                <%= image_tag "Listening-Arrow.svg", alt: "Left arrow", width: "30" %>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            <!-- Reading Section-->
+                <div class="flex flex-col items-center">
+                    <div class="rounded-md px-4 pb-1 text-white text-lg font-medium bg-[#999999] -mb-1.5">
+                        0.0/9
+                    </div>
+                    <div class="flex flex-col bg-[#f3f3f3] w-30 h-45 justify-between rounded-md m-px shadow-xl/20">
+                        <div class="flex flex-col h-30 bg-[#79c698] rounded-md items-center justify-center m-2 gap-2">
+                            <div class=><%= image_tag "Book.svg", alt: "Speech bubble", width: "35"%></div>
+                            <div class=" text-white font-bold">Reading</div>
+                        </div>
+                        <div class="flex justify-center items-center h-15 pb-1">
+                            <%= link_to "/ielts/exam-reading", class: "hover:scale-110 transition-transform duration-150" do %>
+                                <%= image_tag "Reading-Arrow.svg", alt: "Left arrow", width: "30" %>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            <!-- Writing Section-->
+                <div class="flex flex-col items-center">
+                    <div class="rounded-md px-4 pb-1 text-white text-lg font-medium bg-[#de1f26] -mb-1.5">
+                        6.5/9
+                    </div>
+                    <div class="flex flex-col bg-[#f3f3f3] w-30 h-45 justify-between rounded-md m-px shadow-xl/20">
+                        <div class="flex flex-col h-30 bg-[#35a5dd] rounded-md items-center justify-center m-2 gap-2">
+                            <div class=><%= image_tag "Pencil.svg", alt: "Speach bubble", width: "35"%></div>
+                            <div class=" text-white font-bold">Writing</div>
+                        </div>
+                        <div class="flex justify-center items-center h-15 pb-1">
+                            <%= link_to "/ielts/exam-writing", class: "hover:scale-110 transition-transform duration-150" do %>
+                                <%= image_tag "Writing-Arrow.svg", alt: "Left arrow", width: "30" %>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            <!-- Speaking Section-->
+                <div class="flex flex-col items-center">
+                    <div class="rounded-md px-4 pb-1 text-white text-lg font-medium bg-[#999999] -mb-1.5">
+                        0.0/9
+                    </div>
+                    <div class="flex flex-col bg-[#f3f3f3] w-30 h-45 justify-between rounded-md m-px shadow-xl/20">
+                        <div class="flex flex-col h-30 bg-[#8e81f2] rounded-md items-center justify-center m-2 gap-2">
+                            <div class=><%= image_tag "Dialog.svg", alt: "Speach bubble", width: "40"%></div>
+                            <div class=" text-white font-bold">Speaking</div>
+                        </div>
+                        <div class="flex justify-center items-center h-15 pb-1">
+                            <%= link_to "/ielts/exam-speaking", class: "hover:scale-110 transition-transform duration-150" do %>
+                                <%= image_tag "Speaking-Arrow.svg", alt: "Left arrow", width: "30" %>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+   
+        <script src="" async defer></script>
+    </body>
+</html>
