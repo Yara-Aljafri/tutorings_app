@@ -1,1 +1,104 @@
-<p class="text-2xl">IELTS Speaking Section Selector</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Section</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="bg-white rounded-[6px] shadow-md p-6 w-full max-w-lg mx-auto">
+    <div class="bg-white rounded-2xl ">
+
+      <!-- container of the top section -->
+      <div class="flex justify-between items-center">
+
+        <!-- left part contain image + Writing text -->
+        <div class="flex flex-col items-center">
+          <%= image_tag 'Speaking-Icon.svg', class: 'w-10 h-10', alt: 'Writing Icon' %>
+          <h2 class="text-xl font-bold text-[#8e81f2] mt-1">Speaking</h2>
+        </div>
+
+        <!-- right part contain a header + section info + bulb icon -->
+        <div class="flex flex-col items-end">
+          <h1 class="text-xl font-bold">اختر الأقسام</h1>
+          <div class="flex items-center gap-2 mt-2">
+            <div class="flex flex-col text-right text-[#808080] text-sm leading-tight">
+              <span>:معلومات عن قسم الكتابة</span>
+              <span>Questions 40 - 4 Tasks - 32 Minutes</span>
+            </div>
+            <!-- bulb icon -->
+            <i class="fa-regular fa-lightbulb text-2xl text-[#808080]"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- line -->
+      <hr class="my-6 text-gray-300">
+
+      <!-- Checkboxes -->
+      <div class="space-y-3 mb-6">
+<label class="flex items-center gap-2">
+  <input type="radio" name="writing" 
+    class="appearance-none w-5 h-5 border-2 rounded-sm 
+           checked:bg-[#8e81f2] checked:border-white checked:shadow-[0_0_0_2px_#808080]">
+  <span>
+    Full Writing Section (Task 1 + Task 2 + Task 3)
+    <span class="text-sm text-gray-400 ml-2">20 Questions</span>
+  </span>
+</label>
+
+
+  <label class="flex items-center gap-2">
+    <input type="radio" name="writing"
+      class="appearance-none w-5 h-5 border-2 rounded-sm 
+             checked:bg-[#8e81f2] checked:border-white checked:shadow-[0_0_0_2px_#808080]">
+    <span>
+      TASK 1
+    </span>
+      <span class="text-sm text-gray-400">13 Questions</span>
+
+  </label>
+
+  <label class="flex items-center gap-2">
+    <input type="radio" name="writing"
+      class="appearance-none w-5 h-5 border-2 rounded-sm 
+             checked:bg-[#8e81f2] checked:border-white checked:shadow-[0_0_0_2px_#808080]">
+    <span>
+      TASK 2
+    </span>
+      <span class="text-sm text-gray-400">1 Questions</span>
+  </label>
+   <label class="flex items-center gap-2">
+    <input type="radio" name="writing"
+      class="appearance-none w-5 h-5 border-2 rounded-sm 
+             checked:bg-[#8e81f2] checked:border-white checked:shadow-[0_0_0_2px_#808080]">
+    <span>
+      TASK 3
+    </span>
+      <span class="text-sm text-gray-400">6 Questions</span>
+  </label>
+</div>
+
+      <!-- Select -->
+      <div class="mb-6">
+        <div class="flex justify-end mb-2"><p>اختر الوقت لهذا القسم</p></div>
+  <select class="w-full bg-gray-300 border border-gray-400 rounded-3xl px-4 py-3 text-left text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#647fe8]">
+          <option>32 Minutes</option>
+          <option>X Minutes</option>
+        </select>
+      </div>
+
+      <!-- Button -->
+      <div>
+        <button class="flex items-center justify-center bg-[#8e81f2] text-white font-semibold py-3 px-8 rounded-full space-x-2 rtl:space-x-reverse hover:bg-[#2a8bd9] transition">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>بدء الآن</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

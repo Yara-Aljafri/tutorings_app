@@ -1,1 +1,226 @@
-<p class="text-2xl">IELTS Full Exam Page</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>IELTS Practice Exams</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ieltsRed: "#df1f26",
+                        ieltsOrange: "#f8b133",
+                        writingBlue: "#35a5dd",
+                        writingDarkBlue: "#2a84b0",
+                        listeningBlue: "#647fe8",
+                        readingGreen: "#79c698",
+                        readingDarkGreen: "#549d60",
+                        speakingPurple: "#8e81f2"
+                    },
+                    boxShadow: {
+                        card: "0 8px 20px rgba(0,0,0,.08)"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .paper-bg {
+            background:
+                linear-gradient(135deg, #c5d4f5b0 0%, #e2e3e6b0 70%);
+        }
+    </style>
+</head>
+
+<body class="h-screen w-screen overflow-hidden bg-white">
+    <div class="flex h-full w-full flex-col paper-bg min-h-0">
+        <!-- Header -->
+        <header class="sticky top-0 z-20 backdrop-blur">
+            <div class="mx-auto w-full max-w-md px-4 py-4">
+                <h1 class="text-[22px] leading-tight">
+                    <span class="font-extrabold text-ieltsRed">IELTS</span> <span
+                        class="font-bold text-gray-800">Practice Exams</span>
+                </h1>
+
+                <!-- Separate buttons -->
+                <div class="mt-3 flex gap-3 justify-between">
+                    <button id="btnAcademic" class="px-5 py-3 rounded-xl w-full font-semibold text-[15px] transition
+                   bg-ieltsRed text-white shadow-card ring-2 ring-ieltsRed/40 active:scale-[0.99]" aria-pressed="true">
+                        Academic
+                    </button>
+
+                    <button id="btnGeneral"
+                        class="px-5 py-3 rounded-xl w-full font-semibold text-[15px] transition bg-ieltsOrange text-white active:scale-[0.99]"
+                        aria-pressed="false">
+                        General
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main id="scrollArea" class="flex-1 min-h-0 overflow-y-auto">
+            <div class="mx-auto w-full max-w-md px-4 pt-4 pb-24">
+
+                <!-- ACADEMIC -->
+                <section id="panelAcademic" class="space-y-7 pl-3">
+                    <!-- card with GREEN score -->
+                    <div class="relative mt-6">
+
+                        <!-- behind elements -->
+                        <span class="absolute -top-5 right-4 z-0
+               rounded-md bg-ieltsRed px-2.5 py-1 text-xs font-bold text-white">
+                            7.5/9
+                        </span>
+                        <div class="absolute -left-3 top-6 z-0 h-5 w-6 rounded-md bg-ieltsRed"></div>
+
+                        <div class="relative z-10 rounded-lg bg-white p-4 shadow-card">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-[18px] font-semibold text-gray-900">Reading Mock Test 1</h3>
+                                <img src="Reading-Arrow.svg" alt="go" class="h-5 w-5">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative mt-6">
+
+                        <span class="absolute -top-5 right-4 z-0
+               rounded-md bg-ieltsRed px-2.5 py-1 text-xs font-bold text-white">
+                            7.5/9
+                        </span>
+                        <div class="absolute -left-3 top-6 z-0 h-5 w-6 rounded-md bg-ieltsRed"></div>
+
+                        <div class="relative z-10 rounded-lg bg-white p-4 shadow-card">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-[18px] font-semibold text-gray-900">Reading Mock Test 1</h3>
+                                <img src="Reading-Arrow.svg" alt="go" class="h-5 w-5">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative mt-6">
+
+                        <span class="absolute -top-5 right-4 z-0
+               rounded-md bg-ieltsRed px-2.5 py-1 text-xs font-bold text-white">
+                            7.5/9
+                        </span>
+                        <div class="absolute -left-3 top-6 z-0 h-5 w-6 rounded-md bg-ieltsRed"></div>
+
+                        <div class="relative z-10 rounded-lg bg-white p-4 shadow-card">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-[18px] font-semibold text-gray-900">Reading Mock Test 1</h3>
+                                <img src="Reading-Arrow.svg" alt="go" class="h-5 w-5">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- card with GRAY score -->
+                    <div class="relative mt-6">
+                        <!-- behind elements -->
+                        <span
+                            class="absolute -top-5 right-4 z-0 rounded-md bg-gray-400 px-2.5 py-1 text-xs font-bold text-white">
+                            0.0/9
+                        </span>
+                        <div class="absolute -left-3 top-6 z-0 h-5 w-6 rounded-md bg-ieltsRed"></div>
+
+                        <div class="relative z-10 rounded-lg bg-white p-4 shadow-card">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-[18px] font-semibold text-gray-900">Reading Mock Test 1</h3>
+                                <img src="Reading-Arrow.svg" alt="go" class="h-5 w-5 opacity-60">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative mt-6">
+                        <span
+                            class="absolute -top-5 right-4 z-0 rounded-md bg-gray-400 px-2.5 py-1 text-xs font-bold text-white">
+                            0.0/9
+                        </span>
+                        <div class="absolute -left-3 top-6 z-0 h-5 w-6 rounded-md bg-ieltsRed"></div>
+
+                        <div class="relative z-10 rounded-lg bg-white p-4 shadow-card">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-[18px] font-semibold text-gray-900">Reading Mock Test 1</h3>
+                                <img src="Reading-Arrow.svg" alt="go" class="h-5 w-5 opacity-60">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative mt-6">
+                        <span
+                            class="absolute -top-5 right-4 z-0 rounded-md bg-gray-400 px-2.5 py-1 text-xs font-bold text-white">
+                            0.0/9
+                        </span>
+                        <div class="absolute -left-3 top-6 z-0 h-5 w-6 rounded-md bg-ieltsRed"></div>
+
+                        <div class="relative z-10 rounded-lg bg-white p-4 shadow-card">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-[18px] font-semibold text-gray-900">Reading Mock Test 1</h3>
+                                <img src="Reading-Arrow.svg" alt="go" class="h-5 w-5 opacity-60">
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- GENERAL -->
+                <section id="panelGeneral" class="hidden">
+                    <div class="rounded-2xl bg-white p-6 text-center text-gray-500 shadow-card">
+                        General tests coming soon…
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- JS -->
+    <script>
+
+        const btnA = document.getElementById('btnAcademic');
+        const btnG = document.getElementById('btnGeneral');
+        const panelA = document.getElementById('panelAcademic');
+        const panelG = document.getElementById('panelGeneral');
+
+
+        function resetBtn(btn) {
+            btn.classList.remove(
+                'bg-ieltsRed', 'bg-ieltsOrange',
+                'ring-2', 'ring-ieltsRed/40', 'ring-ieltsOrange/40',
+                'shadow-card'
+            );
+        }
+
+        function setSelected(isAcademic) {
+
+            panelA.classList.toggle('hidden', !isAcademic);
+            panelG.classList.toggle('hidden', isAcademic);
+
+            btnA.setAttribute('aria-pressed', String(isAcademic));
+            btnG.setAttribute('aria-pressed', String(!isAcademic));
+
+            resetBtn(btnA);
+            resetBtn(btnG);
+
+            if (isAcademic) {
+                // Academic selected
+                btnA.classList.add('bg-ieltsRed', 'ring-2', 'ring-ieltsRed/40', 'shadow-card', 'text-white');
+                btnG.classList.add('bg-ieltsOrange', 'text-white');
+            } else {
+                // General selected
+                btnG.classList.add('bg-ieltsOrange', 'ring-2', 'ring-ieltsOrange/40', 'shadow-card', 'text-white');
+                btnA.classList.add('bg-ieltsRed', 'text-white');
+            }
+        }
+
+        btnA.addEventListener('click', () => setSelected(true));
+        btnG.addEventListener('click', () => setSelected(false));
+        setSelected(true);
+
+    </script>
+</body>
+
+</html>
