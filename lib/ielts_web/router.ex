@@ -18,6 +18,7 @@ defmodule IeltsWeb.Router do
     live "/activities", PageLive, :activities
     live "/payment", PageLive, :payment
     live "/progress", PageLive, :progress
+    live "/test/choose-type", ChooseTestTypeLive
   end
 
   # Enable LiveDashboard in development

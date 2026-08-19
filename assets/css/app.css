@@ -2,6 +2,7 @@
    https://tailwindcss.com/docs/configuration */
 
 @import "tailwindcss" source(none);
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap");
 @import "phoenix-colocated/ielts/colocated.css";
 @source "../css";
 @source "../js";
@@ -113,7 +114,7 @@
 
   --shadow-main: 0 4px 16px rgba(15, 23, 42, 0.12);
 
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Readex Pro", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
