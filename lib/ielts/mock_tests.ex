@@ -18,6 +18,11 @@ defmodule Ielts.MockTests do
 
   def free_version, do: :v1
 
+  def status_for("v5-mock1"), do: %{status: :completed, score: 7.5}
+  def status_for("v5-mock2"), do: %{status: :in_progress, progress: 60}
+  def status_for("v3-mock1"), do: %{status: :completed, score: 6.0}
+  def status_for(_test_id), do: %{status: :not_started}
+
   defp all_tests do
     [
       %{

@@ -9,7 +9,7 @@ defmodule IeltsWeb.MockLibraryLive do
   @impl true
   def mount(params, _session, socket) do
     user_type = user_type(params)
-    selected_version = MockTests.free_version()
+    selected_version = initial_version(user_type)
 
     {:ok,
      socket
@@ -17,7 +17,7 @@ defmodule IeltsWeb.MockLibraryLive do
      |> assign(:page_title, "Mock Test Library")
      |> assign(:user_type, user_type)
      |> assign(:selected_version, selected_version)
-     |> stream(:versions, MockTests.list_versions())
+     |> stream(:versions, version_tabs())
      |> stream(:tests, MockTests.list_tests(selected_version))}
   end
 
@@ -68,6 +68,31 @@ defmodule IeltsWeb.MockLibraryLive do
             >
               <.icon name="hero-arrow-left" class="size-4 sm:size-5" />
             </.link>
+
+            <.link
+              id="mock-library-user-toggle"
+              navigate={
+                if(@user_type == :premium,
+                  do: ~p"/test/library",
+                  else: ~p"/test/library?user=premium"
+                )
+              }
+              aria-label={
+                if(@user_type == :premium, do: "Switch to guest view", else: "Switch to premium view")
+              }
+              class="inline-flex items-center rounded-full bg-white/70 p-1 text-xs font-bold shadow-sm backdrop-blur"
+            >
+              <span class={[
+                "rounded-full px-3 py-1.5",
+                @user_type == :guest && "bg-[#3242A0] text-white shadow-sm",
+                @user_type == :premium && "text-slate-500"
+              ]}>Guest</span>
+              <span class={[
+                "rounded-full px-3 py-1.5",
+                @user_type == :premium && "bg-[#3242A0] text-white shadow-sm",
+                @user_type == :guest && "text-slate-500"
+              ]}>Premium</span>
+            </.link>
           </div>
 
           <div class="flex flex-wrap items-center gap-3">
@@ -76,8 +101,13 @@ defmodule IeltsWeb.MockLibraryLive do
             </h1>
             <span
               id="mock-library-plan-badge"
-              class="rounded-full border border-slate-300 bg-white/60 px-3 py-1 text-xs font-bold text-slate-500 shadow-sm"
+              class={[
+                "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold shadow-sm",
+                @user_type == :premium && "bg-[#F59E0B] text-white",
+                @user_type == :guest && "border border-slate-300 bg-white/60 text-slate-500"
+              ]}
             >
+              <.icon :if={@user_type == :premium} name="hero-star" class="size-3.5" />
               {plan_label(@user_type)}
             </span>
           </div>
@@ -149,6 +179,47 @@ defmodule IeltsWeb.MockLibraryLive do
                 </p>
                 <h2 class="mt-2 text-lg font-bold text-slate-950">{test.title}</h2>
 
+                <div :if={@user_type == :premium} class="mt-3 flex items-center justify-between gap-3">
+                  <span
+                    id={"status-#{test.id}-pill"}
+                    class={[
+                      "rounded-full px-2.5 py-1 text-xs font-bold",
+                      status_pill_class(test.id)
+                    ]}
+                  >
+                    {status_label(test.id)}
+                  </span>
+                  <span
+                    :if={test_status(test.id).status == :completed}
+                    id={"score-#{test.id}"}
+                    class="text-sm font-bold text-emerald-600"
+                  >
+                    Band {score_label(test.id)}
+                  </span>
+                </div>
+
+                <div
+                  :if={@user_type == :premium && test_status(test.id).status == :in_progress}
+                  id={"progress-#{test.id}"}
+                  class="mt-3"
+                  role="progressbar"
+                  aria-label={"#{test.title} progress"}
+                  aria-valuenow={test_status(test.id).progress}
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div class="h-1.5 overflow-hidden rounded-full bg-blue-100">
+                    <div
+                      class="h-full rounded-full bg-blue-500 transition-[width] duration-500"
+                      style={"width: #{test_status(test.id).progress}%"}
+                    >
+                    </div>
+                  </div>
+                  <p class="mt-1 text-right text-xs font-semibold text-blue-600">
+                    {test_status(test.id).progress}% complete
+                  </p>
+                </div>
+
                 <div class="mt-4 flex flex-wrap gap-3">
                   <span
                     :for={section <- test.sections}
@@ -190,7 +261,10 @@ defmodule IeltsWeb.MockLibraryLive do
             </div>
           </div>
 
-          <div class="mt-5 rounded-2xl bg-[linear-gradient(to_right,#7f60ea,#647fe8,#34a6dd,#39acad)] p-5 text-white shadow-md sm:flex sm:items-center sm:justify-between sm:gap-4">
+          <div
+            :if={@user_type == :guest}
+            class="mt-5 rounded-2xl bg-[linear-gradient(to_right,#7f60ea,#647fe8,#34a6dd,#39acad)] p-5 text-white shadow-md sm:flex sm:items-center sm:justify-between sm:gap-4"
+          >
             <p class="text-lg font-bold">Unlock all versions and tests</p>
             <.link
               id="upgrade-mock-library-button"
@@ -215,12 +289,16 @@ defmodule IeltsWeb.MockLibraryLive do
   defp select_version(socket, version_key) do
     socket
     |> assign(:selected_version, version_key)
-    |> stream(:versions, MockTests.list_versions(), reset: true)
+    |> stream(:versions, version_tabs(), reset: true)
     |> stream(:tests, MockTests.list_tests(version_key), reset: true)
   end
 
+  defp version_tabs, do: Enum.reverse(MockTests.list_versions())
+
   defp user_type(%{"user" => "premium"}), do: :premium
   defp user_type(_params), do: :guest
+
+  defp initial_version(_user_type), do: MockTests.free_version()
 
   defp version_key("v1"), do: :v1
   defp version_key("v2"), do: :v2
@@ -238,8 +316,33 @@ defmodule IeltsWeb.MockLibraryLive do
   defp can_access_test?(:guest, test), do: test.is_free
   defp can_access_test?(_user_type, _test), do: true
 
-  defp plan_label(:premium), do: "Premium Plan"
+  defp plan_label(:premium), do: "Premium"
   defp plan_label(_user_type), do: "Free Plan"
+
+  defp test_status(test_id), do: MockTests.status_for(test_id)
+
+  defp status_label(test_id) do
+    case test_status(test_id).status do
+      :completed -> "Completed"
+      :in_progress -> "In Progress"
+      :not_started -> "Not Started"
+    end
+  end
+
+  defp status_pill_class(test_id) do
+    case test_status(test_id).status do
+      :completed -> "bg-emerald-100 text-emerald-700"
+      :in_progress -> "bg-blue-100 text-blue-700"
+      :not_started -> "bg-slate-100 text-slate-600"
+    end
+  end
+
+  defp score_label(test_id) do
+    test_id
+    |> test_status()
+    |> Map.fetch!(:score)
+    |> :erlang.float_to_binary(decimals: 1)
+  end
 
   defp duration_label(minutes) do
     hours = div(minutes, 60)

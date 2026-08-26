@@ -9,7 +9,9 @@ defmodule IeltsWeb.MockLibraryLiveTest do
 
       assert has_element?(view, "#mock-library-screen")
       assert has_element?(view, ~s(#back-to-practice-mode-button[href="/test/practice-mode"]))
+      assert has_element?(view, ~s(#mock-library-user-toggle[href="/test/library?user=premium"]))
       assert has_element?(view, "#mock-library-plan-badge")
+      assert has_element?(view, "#mock-library-versions button:first-child#version-v1-button")
       assert has_element?(view, "#version-v1-button[aria-pressed]")
       assert has_element?(view, "#version-v5-button")
       assert has_element?(view, "#version-v5-button .hero-lock-closed")
@@ -51,6 +53,45 @@ defmodule IeltsWeb.MockLibraryLiveTest do
       assert view
              |> element("#flash-info")
              |> render() =~ "Starting test..."
+    end
+  end
+
+  describe "mock test library premium screen" do
+    test "renders version 1 by default as the unlocked premium library", %{conn: conn} do
+      {:ok, view, _html} = live(conn, ~p"/test/library?user=premium")
+
+      assert has_element?(view, ~s(#mock-library-user-toggle[href="/test/library"]))
+      assert has_element?(view, "#mock-library-plan-badge .hero-star")
+      assert has_element?(view, "#mock-library-versions button:first-child#version-v1-button")
+      assert has_element?(view, "#version-v1-button[aria-pressed]")
+      refute has_element?(view, "#version-v5-button .hero-lock-closed")
+
+      view
+      |> element("#version-v5-button")
+      |> render_click()
+
+      assert has_element?(view, "#test-v5-mock1")
+      assert has_element?(view, "#start-v5-mock1-button")
+      assert has_element?(view, "#status-v5-mock1-pill")
+      assert has_element?(view, "#score-v5-mock1")
+      assert has_element?(view, "#status-v5-mock2-pill")
+      assert has_element?(view, "#progress-v5-mock2")
+      refute has_element?(view, "[id^='locked-']")
+      refute has_element?(view, "#upgrade-mock-library-button")
+    end
+
+    test "premium users can open older versions without lock UI", %{conn: conn} do
+      {:ok, view, _html} = live(conn, ~p"/test/library?user=premium")
+
+      view
+      |> element("#version-v3-button")
+      |> render_click()
+
+      assert has_element?(view, "#version-v3-button[aria-pressed]")
+      assert has_element?(view, "#test-v3-mock1")
+      assert has_element?(view, "#start-v3-mock1-button")
+      assert has_element?(view, "#score-v3-mock1")
+      refute has_element?(view, "#version-v3-button .hero-lock-closed")
     end
   end
 end
